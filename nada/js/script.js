@@ -29,7 +29,8 @@ function constroiPagina(dados) {
 	  html = inserePropriedade(html,"Comparacoes",comparacao);
 	  html = inserePropriedade(html,"Trocas",troca);
 	  html = inserePropriedade(html,"Segundos",segundo);
-	  
+	  html += $geradorGrafico.grafico(comparacao, troca, segundo);
+
       htmlFinal+= html;
     }
     insereHtml("#nadinha", htmlFinal);

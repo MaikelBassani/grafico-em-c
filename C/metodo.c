@@ -238,10 +238,11 @@ int main (void){
 	int vetor[QTD];
 	char teste[15];
 	int operacao;
-				
-	for (operacao = 1; operacao <= 3; operacao++)
+	int qualSort = 0;
+			
+	for (qualSort; qualSort < 5; qualSort++)
 	{
-		if (operacao == 1){
+		if (qualSort == 0){
 			FILE * pFile1;
 			int n;
 			char name [100];
@@ -264,35 +265,34 @@ int main (void){
 		char name [100];
 
 		pFile1 = fopen ("myfile.json","a+");
-		
-		switch(operacao){
-			case 1:
-				strcpy(teste,"Ordenado");
-				break;
-			case 2:
-				strcpy(teste,"Invertido");
-				break;
-			case 3:
-				strcpy(teste,"Aleatorio");
-				break;
-		}
-		
-		int qualSort = 0;
-		for (qualSort; qualSort < 5; qualSort++){
+				
+		for (operacao = 1; operacao <= 3; operacao++){
+			switch(operacao){
+				case 1:
+					strcpy(teste,"Ordenado");
+					break;
+				case 2:
+					strcpy(teste,"Invertido");
+					break;
+				case 3:
+					strcpy(teste,"Aleatorio");
+					break;
+			}
 			if (qualSort != 0 || (operacao != 1 && qualSort == 0)){
 				fprintf (pFile1, "{\n");
 			}
-			fprintf (pFile1, "\t\"Titulo\" : \"%s - %s\"\n", organizadores[qualSort].nome, teste);
-			fprintf (pFile1, "\t\"Comparações\" : %d\n",organizadores[qualSort].comparacoes);
-			fprintf (pFile1, "\t\"Trocas\" : %d\n",organizadores[qualSort].troca);
+			fprintf (pFile1, "\t\"Titulo\" : \"%s - %s\",\n", organizadores[qualSort].nome, teste);
+			fprintf (pFile1, "\t\"Comparacoes\" : %d,\n",organizadores[qualSort].comparacoes);
+			fprintf (pFile1, "\t\"Trocas\" : %d,\n",organizadores[qualSort].troca);
 			fprintf (pFile1, "\t\"Segundos\" : %.2f\n",organizadores[qualSort].segundos);
-			if (qualSort != 4){
-				fprintf (pFile1, "},\n");
-			}
+			if (qualSort != 4 || (operacao != 3 && qualSort == 4)){
+    			fprintf (pFile1, "},\n");
+   			}
 		}
 		
 				
-		if (operacao == 3){
+		if (qualSort == 4
+		){
 			fprintf (pFile1, "}]");
 		}
 	
