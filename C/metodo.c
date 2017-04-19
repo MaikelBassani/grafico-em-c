@@ -37,6 +37,7 @@ int geraNumero(int vet[], int op) {
 			vet[i] = (int) (rand() % 10000);
 			}
 			break;
+			
 	}
 	return vet;
 }
@@ -278,8 +279,8 @@ int main (void){
 		
 		int qualSort = 0;
 		for (qualSort; qualSort < 5; qualSort++){
-			if (qualSort != 0){
-				fprintf (pFile1, "{");
+			if (qualSort != 0 || (operacao != 1 && qualSort == 0)){
+				fprintf (pFile1, "{\n");
 			}
 			fprintf (pFile1, "\t\"Titulo\" : \"%s - %s\"\n", organizadores[qualSort].nome, teste);
 			fprintf (pFile1, "\t\"Comparações\" : %d\n",organizadores[qualSort].comparacoes);
