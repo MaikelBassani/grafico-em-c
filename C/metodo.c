@@ -9,6 +9,7 @@ typedef struct sort {
 	int comparacoes;
 	int troca;
 	float segundos;
+	char nome;
 }Sort;
 
 Sort merge;
@@ -67,6 +68,7 @@ Sort bubbleSort(int vetor[]) {
 	}
 	t = clock() - t;
     bolha.segundos = ((float)t)/CLOCKS_PER_SEC;
+	strcpy(bolha.nome,"Bubblesort");
 	return bolha;
 }
 
@@ -94,6 +96,7 @@ Sort insertionSort(int vetor[]){
 	}
 	t = clock() - t;
     insercao.segundos = ((float)t)/CLOCKS_PER_SEC;
+	strcpy(insercao.nome,"Insertionsort");
 	return insercao;
 }
 
@@ -128,6 +131,7 @@ Sort selectionSort(int vetor[]){
 	}
 	t = clock() - t;
     selecao.segundos = ((float)t)/CLOCKS_PER_SEC;
+	strcpy(selecao.nome,"Selectionsort");
 	return selecao;
 }
 
@@ -143,6 +147,7 @@ Sort mergeSort(int vetor[], int inicio, int fim) {
 	}
 	t = clock() - t;
     merge.segundos = ((float)t)/CLOCKS_PER_SEC;
+	strcpy(merge.nome,"Mergesort");
 	return merge;
 }
 
@@ -226,6 +231,7 @@ Sort quickSort(int vet[], int ini, int fim) {
 	
 	t = clock() - t;
     rapido.segundos = ((float)t)/CLOCKS_PER_SEC;
+	strcpy(rapido.nome,"Quicksort");
 	return rapido;
 }
 
@@ -246,17 +252,13 @@ int main (void){
 			fclose (pFile1);
 		}
 	
-		Sort bubble;
-		Sort insertion;
-		Sort selection;
-		Sort merge;
-		Sort quick;
+		Sort organizadores[5];
 		
-		bubble = bubbleSort(geraNumero(vetor, operacao));
-		insertion = insertionSort(geraNumero(vetor, operacao));
-		selection = selectionSort(geraNumero(vetor, operacao));
-		merge = mergeSort(geraNumero(vetor, operacao),0,QTD - 1);
-		quick = quickSort(geraNumero(vetor, operacao),0,QTD - 1);
+		organizadores[0] = bubbleSort(geraNumero(vetor, operacao));
+		organizadores[1] = insertionSort(geraNumero(vetor, operacao));
+		organizadores[2] = selectionSort(geraNumero(vetor, operacao));
+		organizadores[3] = mergeSort(geraNumero(vetor, operacao),0,QTD - 1);
+		organizadores[4] = quickSort(geraNumero(vetor, operacao),0,QTD - 1);
 		
 		FILE * pFile1;
 		int n;
@@ -276,38 +278,17 @@ int main (void){
 				break;
 		}
 		
-		fprintf (pFile1, "\t'Titulo' : '%s - %s'\n","Bubble sort", teste);
-		fprintf (pFile1, "\t'Comparações' : '%d'\n",bubble.comparacoes);
-		fprintf (pFile1, "\t'Trocas' : '%d'\n",bubble.troca);
-		fprintf (pFile1, "\t'Segundos' : '%.2f'\n",bubble.segundos);
-		fprintf (pFile1, "},\n");
+		int qualSort = 0;
+		for (qualSort; qualSort < 5; qualSort++){
+			fprintf (pFile1, "\t'Titulo' : '%s - %s'\n", organizadores[qualSort].nome, teste);
+			fprintf (pFile1, "\t'Comparações' : '%d'\n",organizadores[qualSort].comparacoes);
+			fprintf (pFile1, "\t'Trocas' : '%d'\n",organizadores[qualSort].troca);
+			fprintf (pFile1, "\t'Segundos' : '%.2f'\n",organizadores[qualSort].segundos);
+			if (qualSort != 4 && operacao != 3){
+				fprintf (pFile1, "},\n");
+			}
+		}
 		
-		fprintf (pFile1, "{\n");
-		fprintf (pFile1, "\t'Titulo' : '%s - %s'\n","Insertion sort", teste);
-		fprintf (pFile1, "\t'Comparações' : '%d'\n",insertion.comparacoes);
-		fprintf (pFile1, "\t'Trocas' : '%d'\n",insertion.troca);
-		fprintf (pFile1, "\t'Segundos' : '%.2f'\n",insertion.segundos);
-		fprintf (pFile1, "},\n");
-		
-		fprintf (pFile1, "{\n");
-		fprintf (pFile1, "\t'Titulo' : '%s - %s'\n","Selection sort", teste);
-		fprintf (pFile1, "\t'Comparações' : '%d'\n",selection.comparacoes);
-		fprintf (pFile1, "\t'Trocas' : '%d'\n",selection.troca);
-		fprintf (pFile1, "\t'Segundos' : '%.2f'\n",selection.segundos);
-		fprintf (pFile1, "},\n");
-		
-		fprintf (pFile1, "{\n");
-		fprintf (pFile1, "\t'Titulo' : '%s - %s'\n","Merge sort", teste);
-		fprintf (pFile1, "\t'Comparações' : '%d'\n",merge.comparacoes);
-		fprintf (pFile1, "\t'Trocas' : '%d'\n",merge.troca);
-		fprintf (pFile1, "\t'Segundos' : '%.2f'\n",merge.segundos);
-		fprintf (pFile1, "},\n");
-		
-		fprintf (pFile1, "{\n");
-		fprintf (pFile1, "\t'Titulo' : '%s - %s'\n","Quick sort", teste);
-		fprintf (pFile1, "\t'Comparações' : '%d'\n",quick.comparacoes);
-		fprintf (pFile1, "\t'Trocas' : '%d'\n",quick.troca);
-		fprintf (pFile1, "\t'Segundos' : '%.2f'\n",quick.segundos);
 				
 		if (operacao == 3){
 			fprintf (pFile1, "}]");
