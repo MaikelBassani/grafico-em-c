@@ -9,7 +9,7 @@ typedef struct sort {
 	int comparacoes;
 	int troca;
 	float segundos;
-	char nome;
+	char nome[50];
 }Sort;
 
 Sort merge;
@@ -32,7 +32,7 @@ int geraNumero(int vet[], int op) {
 			}
 			break;
 	
-		case 3: // Aleatórios
+		case 3: // AleatÃ³rios
 			for (i = 0; i < QTD; i++) {
 			vet[i] = (int) (rand() % 10000);
 			}
@@ -207,8 +207,6 @@ Sort quickSort(int vet[], int ini, int fim) {
       	rapido.comparacoes++;
       	j = j - 1;
 	  }
-	  printf("I: %d\n",i);
-	  printf("J: %d\n",j);
       if(i <= j){
       	rapido.comparacoes++;
       	rapido.troca++;
@@ -247,7 +245,7 @@ int main (void){
 			int n;
 			char name [100];
 			
-			pFile1 = fopen ("myfile.txt","w");
+			pFile1 = fopen ("myfile.json","w");
 			fprintf (pFile1, "[{\n");
 			fclose (pFile1);
 		}
@@ -264,7 +262,7 @@ int main (void){
 		int n;
 		char name [100];
 
-		pFile1 = fopen ("myfile.txt","a+");
+		pFile1 = fopen ("myfile.json","a+");
 		
 		switch(operacao){
 			case 1:
@@ -281,19 +279,17 @@ int main (void){
 		int qualSort = 0;
 		for (qualSort; qualSort < 5; qualSort++){
 			fprintf (pFile1, "\t'Titulo' : '%s - %s'\n", organizadores[qualSort].nome, teste);
-			fprintf (pFile1, "\t'Comparações' : '%d'\n",organizadores[qualSort].comparacoes);
+			fprintf (pFile1, "\t'ComparaÃ§Ãµes' : '%d'\n",organizadores[qualSort].comparacoes);
 			fprintf (pFile1, "\t'Trocas' : '%d'\n",organizadores[qualSort].troca);
 			fprintf (pFile1, "\t'Segundos' : '%.2f'\n",organizadores[qualSort].segundos);
-			if (qualSort != 4 && operacao != 3){
-				fprintf (pFile1, "},\n");
+			if (qualSort != 4){
+				fprintf (pFile1, "},\n{");
 			}
 		}
 		
 				
 		if (operacao == 3){
 			fprintf (pFile1, "}]");
-		}else{
-			fprintf (pFile1, "};\n{");
 		}
 	
 		fclose (pFile1);
