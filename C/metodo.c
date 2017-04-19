@@ -278,18 +278,20 @@ int main (void){
 		
 		int qualSort = 0;
 		for (qualSort; qualSort < 5; qualSort++){
+			if (qualSort != 0){
+				fprintf (pFile1, "\n[{");
+			}
 			fprintf (pFile1, "\t'Titulo' : '%s - %s'\n", organizadores[qualSort].nome, teste);
 			fprintf (pFile1, "\t'Comparações' : '%d'\n",organizadores[qualSort].comparacoes);
 			fprintf (pFile1, "\t'Trocas' : '%d'\n",organizadores[qualSort].troca);
 			fprintf (pFile1, "\t'Segundos' : '%.2f'\n",organizadores[qualSort].segundos);
-			if (qualSort != 4){
-				fprintf (pFile1, "},\n{");
-			}
+			fprintf (pFile1, "}]");
+			
 		}
 		
 				
 		if (operacao == 3){
-			fprintf (pFile1, "}]");
+			
 		}
 	
 		fclose (pFile1);
