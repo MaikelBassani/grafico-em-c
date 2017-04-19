@@ -1,0 +1,90 @@
+[{
+	"Titulo" : "Bubblesort - Ordenado",
+	"Comparacoes" : 9999,
+	"Trocas" : 0,
+	"Segundos" : 0.00
+},
+{
+	"Titulo" : "Insertionsort - Ordenado",
+	"Comparacoes" : 9999,
+	"Trocas" : 19998,
+	"Segundos" : 0.00
+},
+{
+	"Titulo" : "Selectionsort - Ordenado",
+	"Comparacoes" : 49995000,
+	"Trocas" : 9999,
+	"Segundos" : 0.19
+},
+{
+	"Titulo" : "Mergesort - Ordenado",
+	"Comparacoes" : 69008,
+	"Trocas" : 133616,
+	"Segundos" : 0.00
+},
+{
+	"Titulo" : "Quicksort - Ordenado",
+	"Comparacoes" : 10003,
+	"Trocas" : 1,
+	"Segundos" : 0.02
+},
+{
+	"Titulo" : "Bubblesort - Invertido",
+	"Comparacoes" : 99990000,
+	"Trocas" : 49995000,
+	"Segundos" : 0.59
+},
+{
+	"Titulo" : "Insertionsort - Invertido",
+	"Comparacoes" : 50004999,
+	"Trocas" : 50014998,
+	"Segundos" : 0.25
+},
+{
+	"Titulo" : "Selectionsort - Invertido",
+	"Comparacoes" : 49995000,
+	"Trocas" : 14999,
+	"Segundos" : 0.20
+},
+{
+	"Titulo" : "Mergesort - Invertido",
+	"Comparacoes" : 64608,
+	"Trocas" : 133616,
+	"Segundos" : 0.00
+},
+{
+	"Titulo" : "Quicksort - Invertido",
+	"Comparacoes" : 10002,
+	"Trocas" : 5000,
+	"Segundos" : 0.00
+},
+{
+	"Titulo" : "Bubblesort - Aleatorio",
+	"Comparacoes" : 99310068,
+	"Trocas" : 25341218,
+	"Segundos" : 0.64
+},
+{
+	"Titulo" : "Insertionsort - Aleatorio",
+	"Comparacoes" : 25026800,
+	"Trocas" : 25036799,
+	"Segundos" : 0.13
+},
+{
+	"Titulo" : "Selectionsort - Aleatorio",
+	"Comparacoes" : 49995000,
+	"Trocas" : 19983,
+	"Segundos" : 0.19
+},
+{
+	"Titulo" : "Mergesort - Aleatorio",
+	"Comparacoes" : 120530,
+	"Trocas" : 133616,
+	"Segundos" : 0.02
+},
+{
+	"Titulo" : "Quicksort - Aleatorio",
+	"Comparacoes" : 10003,
+	"Trocas" : 1549,
+	"Segundos" : 0.00
+}]
