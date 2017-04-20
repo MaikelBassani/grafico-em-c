@@ -30,21 +30,21 @@ AmCharts.makeChart('chartdiv',
 		"trendLines": [],
 		"graphs": [
 			{
-				"balloonText": "[[title]] of [[category]]:[[value]]",
+				"balloonText": "[[title]] em [[category]]:[[value]]",
 				"bullet": "round",
 				"id": "AmGraph-1",
 				"title": "Ordenado",
 				"valueField": "column-1"
 			},
 			{
-				"balloonText": "[[title]] of [[category]]:[[value]]",
+				"balloonText": "[[title]] em [[category]]:[[value]]",
 				"bullet": "square",
 				"id": "AmGraph-2",
 				"title": "Invertido",
 				"valueField": "column-2"
 			},
 			{
-				"balloonText": "[[title]] of [[category]]:[[value]]",
+				"balloonText": "[[title]] em [[category]]:[[value]]",
 				"bullet": "triangleUp",
 				"id": "AmGraph-3",
 				"title": "Aleatorio",
