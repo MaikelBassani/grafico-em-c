@@ -1,9 +1,9 @@
 var $geradorGrafico = (function () {
 
 	var contador = 0;
-	var comparacao = [];
-	var trocas = [];
-	var segundos = [];
+	var comparacao;
+	var trocas;
+	var segundos;
 	var contDiv = 0;
 
 	return {
@@ -12,13 +12,12 @@ var $geradorGrafico = (function () {
 
 	function grafico(nComparacao, nTrocas, nSegundos) {
 		var html = "";
-			console.log("aki");
 			contador++;
-			comparacao.push(nComparacao);
-			trocas.push(nTrocas);
-			segundos.push(nSegundos);
+			comparacao = nComparacao;
+			trocas = nTrocas;
+			segundos = nSegundos;
 			$AmCharts.geraValoresGrafico(comparacao, trocas, segundos);
-			console.log(contador);
+			console.log(comparacao, trocas, segundos);
 			if (contador == 15){
 				$AmCharts.Grafico()
 			}

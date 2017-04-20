@@ -47,7 +47,7 @@ function constroiPagina2(dados) {
 			comparacao = dados[i].Comparacoes,
 			troca = dados[i].Trocas,
 			segundo = dados[i].Segundos;
-
+			console.log(comparacao, troca, segundo)
 	  html += $geradorGrafico.grafico(comparacao, troca, segundo);
 
       htmlFinal+= html;
