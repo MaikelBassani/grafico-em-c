@@ -131,35 +131,25 @@ var lineChartData2 = {
 
 }
 
-Chart.defaults.global.animationSteps = 50;
-Chart.defaults.global.tooltipYPadding = 5;
-Chart.defaults.global.tooltipCornerRadius = 0;
-Chart.defaults.global.tooltipTitleFontStyle = "normal";
-Chart.defaults.global.tooltipFillColor = "rgba(0,160,0,0.8)";
-Chart.defaults.global.animationEasing = "easeOutBounce";
-Chart.defaults.global.responsive = true;
-Chart.defaults.global.scaleLineColor = "black";
-Chart.defaults.global.scaleFontSize = 16;
+lineChartData2.datasets[0].data[0] = trocas[0]
+lineChartData2.datasets[0].data[1] = trocas[1]
+lineChartData2.datasets[0].data[2] = trocas[2]
 
-lineChartData2.datasets[0].data[0] = troca[0]
-lineChartData2.datasets[0].data[1] = troca[1]
-lineChartData2.datasets[0].data[2] = troca[2]
+lineChartData2.datasets[1].data[0] = trocas[3]
+lineChartData2.datasets[1].data[1] = trocas[4]
+lineChartData2.datasets[1].data[2] = trocas[5]
 
-lineChartData2.datasets[1].data[0] = troca[3]
-lineChartData2.datasets[1].data[1] = troca[4]
-lineChartData2.datasets[1].data[2] = troca[5]
+lineChartData2.datasets[2].data[0] = trocas[6]
+lineChartData2.datasets[2].data[1] = trocas[7]
+lineChartData2.datasets[2].data[2] = trocas[8]
 
-lineChartData2.datasets[2].data[0] = troca[6]
-lineChartData2.datasets[2].data[1] = troca[7]
-lineChartData2.datasets[2].data[2] = troca[8]
+lineChartData2.datasets[3].data[0] = trocas[9]
+lineChartData2.datasets[3].data[1] = trocas[10]
+lineChartData2.datasets[3].data[2] = trocas[11]
 
-lineChartData2.datasets[3].data[0] = troca[9]
-lineChartData2.datasets[3].data[1] = troca[10]
-lineChartData2.datasets[3].data[2] = troca[11]
-
-lineChartData2.datasets[4].data[0] = troca[12]
-lineChartData2.datasets[4].data[1] = troca[13]
-lineChartData2.datasets[4].data[2] = troca[14]
+lineChartData2.datasets[4].data[0] = trocas[12]
+lineChartData2.datasets[4].data[1] = trocas[13]
+lineChartData2.datasets[4].data[2] = trocas[14]
 
 var ctx2 = document.getElementById("chart2").getContext("2d");
 var LineChartDemo2 = new Chart(ctx2).Line(lineChartData2,{
@@ -168,5 +158,70 @@ var LineChartDemo2 = new Chart(ctx2).Line(lineChartData2,{
     scaleShowVerticalLines: true,
     scaleGridLineColor: "black"
 });
+
+var lineChartData3 = {
+    labels: ["Ordenado", "Invertido", "Aleatorio"],
+    datasets: [{
+		label: "Bubble Sort",
+        fillColor: "rgba(220,220,220,0)",
+        strokeColor: "rgba(220,180,0,1)",
+        pointColor: "rgba(220,180,0,1)",
+        data: [20, 30, 80]
+    }, {
+		label: "Selection Sort",
+        fillColor: "rgba(151,187,205,0)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        data: [60, 10, 40]
+    },{
+		label: "Insert Sort",
+        fillColor: "rgba(151,187,205,0)",
+        strokeColor: "rgba(0,0,0,1)",
+        pointColor: "rgba(0,0,0,1)",
+        data: [60, 10, 40]
+    },{
+		label: "Merge Sort",
+        fillColor: "rgba(151,187,205,0)",
+        strokeColor: "rgba(86,86,86,1)",
+        pointColor: "rgba(86,86,86,1)",
+        data: [60, 10, 40]
+    },{
+		label: "Quick Sort",
+        fillColor: "rgba(151,187,205,0)",
+        strokeColor: "rgba(35,187,85,1)",
+        pointColor: "rgba(35,187,85,1)",
+        data: [60, 10, 40]
+    }]
+
+}
+
+lineChartData3.datasets[0].data[0] = segundos[0]
+lineChartData3.datasets[0].data[1] = segundos[1]
+lineChartData3.datasets[0].data[2] = segundos[2]
+
+lineChartData3.datasets[1].data[0] = segundos[3]
+lineChartData3.datasets[1].data[1] = segundos[4]
+lineChartData3.datasets[1].data[2] = segundos[5]
+
+lineChartData3.datasets[2].data[0] = segundos[6]
+lineChartData3.datasets[2].data[1] = segundos[7]
+lineChartData3.datasets[2].data[2] = segundos[8]
+
+lineChartData3.datasets[3].data[0] = segundos[9]
+lineChartData3.datasets[3].data[1] = segundos[10]
+lineChartData3.datasets[3].data[2] = segundos[11]
+
+lineChartData3.datasets[4].data[0] = segundos[12]
+lineChartData3.datasets[4].data[1] = segundos[13]
+lineChartData3.datasets[4].data[2] = segundos[14]
+
+var ctx3 = document.getElementById("chart3").getContext("2d");
+var LineChartDemo3 = new Chart(ctx3).Line(lineChartData3,{
+    pointDotRadius: 10,
+    bezierCurve: true,
+    scaleShowVerticalLines: true,
+    scaleGridLineColor: "black"
+});
+
 }
 })();
