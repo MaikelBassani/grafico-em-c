@@ -22,34 +22,38 @@ function Grafico() {
 	
 var lineChartData = {
     labels: ["Ordenado", "Invertido", "Aleatorio"],
-    datasets: [{
+        datasets: [{
+		label: "Bubble Sort",
         fillColor: "rgba(220,220,220,0)",
         strokeColor: "rgba(220,180,0,1)",
         pointColor: "rgba(220,180,0,1)",
         data: [20, 30, 80]
     }, {
+		label: "Selection Sort",
         fillColor: "rgba(151,187,205,0)",
         strokeColor: "rgba(151,187,205,1)",
         pointColor: "rgba(151,187,205,1)",
         data: [60, 10, 40]
     },{
+		label: "Insert Sort",
         fillColor: "rgba(151,187,205,0)",
         strokeColor: "rgba(0,0,0,1)",
         pointColor: "rgba(0,0,0,1)",
         data: [60, 10, 40]
     },{
+		label: "Merge Sort",
         fillColor: "rgba(151,187,205,0)",
         strokeColor: "rgba(86,86,86,1)",
         pointColor: "rgba(86,86,86,1)",
         data: [60, 10, 40]
     },{
+		label: "Quick Sort",
         fillColor: "rgba(151,187,205,0)",
         strokeColor: "rgba(35,187,85,1)",
         pointColor: "rgba(35,187,85,1)",
         data: [60, 10, 40]
     }]
-
-}
+};
 
 Chart.defaults.global.animationSteps = 50;
 Chart.defaults.global.tooltipYPadding = 5;
@@ -82,12 +86,87 @@ lineChartData.datasets[4].data[1] = comparacao[13]
 lineChartData.datasets[4].data[2] = comparacao[14]
 
 var ctx = document.getElementById("chart1").getContext("2d");
-var LineChartDemo = new Chart(ctx).Line(lineChartData, {
+legend(document.getElementById("lineLegend"), lineChartData);
+var LineChartDemo = new Chart(ctx).Line(lineChartData,{
     pointDotRadius: 10,
     bezierCurve: true,
     scaleShowVerticalLines: true,
     scaleGridLineColor: "black"
 });
 
+
+var lineChartData2 = {
+    labels: ["Ordenado", "Invertido", "Aleatorio"],
+    datasets: [{
+		label: "Bubble Sort",
+        fillColor: "rgba(220,220,220,0)",
+        strokeColor: "rgba(220,180,0,1)",
+        pointColor: "rgba(220,180,0,1)",
+        data: [20, 30, 80]
+    }, {
+		label: "Selection Sort",
+        fillColor: "rgba(151,187,205,0)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        data: [60, 10, 40]
+    },{
+		label: "Insert Sort",
+        fillColor: "rgba(151,187,205,0)",
+        strokeColor: "rgba(0,0,0,1)",
+        pointColor: "rgba(0,0,0,1)",
+        data: [60, 10, 40]
+    },{
+		label: "Merge Sort",
+        fillColor: "rgba(151,187,205,0)",
+        strokeColor: "rgba(86,86,86,1)",
+        pointColor: "rgba(86,86,86,1)",
+        data: [60, 10, 40]
+    },{
+		label: "Quick Sort",
+        fillColor: "rgba(151,187,205,0)",
+        strokeColor: "rgba(35,187,85,1)",
+        pointColor: "rgba(35,187,85,1)",
+        data: [60, 10, 40]
+    }]
+
+}
+
+Chart.defaults.global.animationSteps = 50;
+Chart.defaults.global.tooltipYPadding = 5;
+Chart.defaults.global.tooltipCornerRadius = 0;
+Chart.defaults.global.tooltipTitleFontStyle = "normal";
+Chart.defaults.global.tooltipFillColor = "rgba(0,160,0,0.8)";
+Chart.defaults.global.animationEasing = "easeOutBounce";
+Chart.defaults.global.responsive = true;
+Chart.defaults.global.scaleLineColor = "black";
+Chart.defaults.global.scaleFontSize = 16;
+
+lineChartData2.datasets[0].data[0] = troca[0]
+lineChartData2.datasets[0].data[1] = troca[1]
+lineChartData2.datasets[0].data[2] = troca[2]
+
+lineChartData2.datasets[1].data[0] = troca[3]
+lineChartData2.datasets[1].data[1] = troca[4]
+lineChartData2.datasets[1].data[2] = troca[5]
+
+lineChartData2.datasets[2].data[0] = troca[6]
+lineChartData2.datasets[2].data[1] = troca[7]
+lineChartData2.datasets[2].data[2] = troca[8]
+
+lineChartData2.datasets[3].data[0] = troca[9]
+lineChartData2.datasets[3].data[1] = troca[10]
+lineChartData2.datasets[3].data[2] = troca[11]
+
+lineChartData2.datasets[4].data[0] = troca[12]
+lineChartData2.datasets[4].data[1] = troca[13]
+lineChartData2.datasets[4].data[2] = troca[14]
+
+var ctx2 = document.getElementById("chart2").getContext("2d");
+var LineChartDemo2 = new Chart(ctx2).Line(lineChartData2,{
+    pointDotRadius: 10,
+    bezierCurve: true,
+    scaleShowVerticalLines: true,
+    scaleGridLineColor: "black"
+});
 }
 })();
